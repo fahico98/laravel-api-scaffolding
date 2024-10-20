@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware("auth");
+        $this->middleware('auth');
     }
 
     /**
@@ -18,8 +17,9 @@ class UserController extends Controller
      */
     public function me()
     {
-        return response()->json([
-            "user" => Auth::user()
-        ]);
+        return response()
+            ->json([
+                'user' => Auth::user(),
+            ]);
     }
 }
